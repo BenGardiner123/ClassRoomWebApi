@@ -38,7 +38,7 @@ namespace ClassRoomApi.Controllers
         public void EnterRoom()
         {
             r1.enterRoom(p1);
-            r2.enterRoom(p2);
+            r1.enterRoom(p2);
         
         }
 
@@ -48,21 +48,7 @@ namespace ClassRoomApi.Controllers
             return r1.ListOfPeopleInside.ToList();
         }
 
-        
-        [HttpGet("PeopleInRoom")]
-         public List<Person> PeopleInRoom(Room id)
-         {
-            
-            var personName = from person in id.ListOfPeopleInside
-                             where person.Name != null
-                             select person;                          
-            foreach (var person in personName)
-            {
-                PersonList.Add(person);
-
-            }
-            return PersonList;
-         }
+       
     }
     
 }
